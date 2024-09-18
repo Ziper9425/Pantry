@@ -25,9 +25,10 @@ function App() {
   }
 
   return (
-    <Authenticator>
-      {({ signOut }) => (
+    <Authenticator signUpAttributes={["preferred_username"]}>
+      {({ signOut, user }) => (
         <main>
+          <h1>Hello {user?.username}</h1>
           <h1>My todos</h1>
           <button onClick={createTodo}>+ new</button>
           <ul>
